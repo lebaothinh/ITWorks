@@ -1,0 +1,171 @@
+.company{
+    background-color:transparent;
+    padding: 0 !important;
+    margin-top: 62px;
+}
+mat-grid-tile{
+    margin: 10px;
+    border:1px solid black;
+} 
+.avatar{
+    width: 100%;
+}
+.avatar img{
+    width: 100%;
+}
+.generalif{
+    width: 100%;
+    height: 200px;
+    margin: 10px 0 !important;
+}
+.logo{
+    background-color:white;
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+.logo img{
+    margin: auto;
+    width: 100%;
+}
+.summaryif{
+    background-color:white;
+    padding: 5px 40px;
+    color:black;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    border-radius: 4px;
+}
+.option{
+    text-align: center;
+    display: flex;
+    background-color:white;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    border-radius: 4px;
+    height: 100%;
+}
+.buttonoption{
+    margin: auto;
+}
+.buttonoption button{
+    font-size: 20px;
+}
+.buttonoption #addareview{
+    border: 2px solid red;
+    background-color: transparent;
+    color: red;
+}
+.buttonoption #makequestion{
+    border: 2px solid rgb(123, 228, 18);
+    background-color: transparent;
+    color: rgb(116, 218, 14);
+}
+.buttonoption #makequestion:hover{
+    background-color: rgb(116, 218, 14);
+    color: white;
+}
+.buttonoption #addareview:hover{
+    background-color: red;
+    color: white;
+}
+.buttonoption #follow{
+    border: 2px solid #4267B2;
+    background-color: transparent;
+    color:#4267B2;
+}
+.buttonoption #unfollow{
+    border: 2px solid #4267B2;
+    background-color: transparent;
+    color: #4267B2;
+}
+.buttonoption #follow:hover{
+    background-color: #4267B2;
+    color: white;
+}
+.detailif{
+    width: 100%;
+    background-color: transparent;
+    margin: 0 !important;
+}
+.detailif .col-md-8{
+    padding-top: 15px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important
+}
+.detailif .col-md-4{
+    padding-top: 15px !important;
+    padding-right: 0 !important
+}
+.overviewandreviewsandjobs{
+}
+.overviewandreviews{
+    background-color: white;
+    margin-bottom: 15px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+}
+.overviewandreviews mat-card-content div{
+    padding: 20px;
+}
+.jobs{
+    background-color: white; 
+    padding: 10px !important;
+}
+.ratingandcomment{
+}
+.rating{
+    background-color:antiquewhite;
+    height: 400px; 
+    margin-bottom: 15px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    position: relative;
+}
+.comment{
+    background-color:white;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    color:black;
+    font-weight: bold;
+    text-align: center;
+    width: 100% !important;
+    padding: 20px;
+}
+.commentleft{
+    text-align: left;
+}
+.commentright{
+    text-align: right;
+}
+.generalrating{
+    /* height: 400px;
+    width: 100%;
+    background-color:white; */
+}
+.jobshortcut{
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+}
+.jobshortcut:hover{
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.719);
+    transition: all 0.3s ease-out;
+}
+.allcomments{
+
+}
+#btnseemore{
+    position: absolute;
+    right: 3%;
+    bottom: 27%;
+    width: 5%;
+}
+.star{
+    color:deepskyblue;
+}
+.hand{
+    color: cadetblue;
+}
+.mkquestion{
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0;
+}

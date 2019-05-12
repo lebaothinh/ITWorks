@@ -1,0 +1,28 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>IDCompany</th>
+      <th>Company Name</th>
+      <th>Logo</th>
+      <th>NumberOE</th>
+      <th>Country</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employer of arrEmployers">
+      <td>{{employer.IDCompany}}</td>
+      <td>{{employer.companyName}}</td>
+      <td><img style="width:50px;" [src]="pathimg+'/'+employer.logo"/></td>
+      <td>{{employer.numberOE}}</td>
+      <td>{{employer.country}}</td>
+      <td>{{employer.email}}</td>
+      <td>{{employer.phoneNumber}}</td>
+      <td><button mat-raised-button class="btn btn-success" (click)="onUpdateEmployer(employer)">Update</button></td>
+      <td><button mat-raised-button class="btn btn-danger" (click)="onDeleteEmployer(employer.IDCompany)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

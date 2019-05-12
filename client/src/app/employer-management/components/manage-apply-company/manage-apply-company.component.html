@@ -1,0 +1,48 @@
+    <mat-drawer-container class="container manageapp">
+        <mat-drawer #drawer id="rightslider" class="example-sidenav" mode="over" [opened]="statusMenu" position="end"
+            (closedStart)="statusMenu = false">
+            <!-- <app-slider-left></app-slider-left> -->
+            <div *ngIf="arrContact.length == 0 ; else contactlist">
+                <h6>There no contact!</h6>
+            </div>
+            <ng-template #contactlist >
+                    <h5 style="text-align: center">Contact List</h5>
+                    <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Avatar</th>
+                                <th>ID</th>
+                                <th>Laborer Name</th>
+                                <td>Remove</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let contact of arrContact">
+                                        <tr style="border: 1px solid #f1f1f1">
+                                                <td><img [src]="URL_IMG+'/'+contact.avatar" /></td>
+                                                <td>{{contact.IDLaborer}}</td>
+                                                <td>{{contact.laborerName}}</td>
+                                                <td><button mat-raised-button style="color:red"><i class="fas fa-trash-alt"></i></button></td>
+                                              </tr>
+                                </ng-container>
+                            </tbody>
+                          </table>
+            </ng-template>
+        </mat-drawer>
+
+        <mat-drawer-content style="background-color: white;">
+            <!-- <app-navbar (openMenu)="openMenu($event)"></app-navbar> -->
+            <div class="content">
+                <button id="contactlist" mat-fab color="primary" [matBadge]="arrContact.length" matBadgeColor="accent"
+                    (click)="statusMenu = !statusMenu" matTooltip="Contact List">
+                    <h4><i class="fas fa-users"></i></h4>
+                </button>
+                <ng-container *ngFor="let apply of arrApplyWorks">
+                    <app-tag-applywork (Refresh)="getInfo()"  (AddContact)="addContact($event)" [IDLaborer]="apply.IDLaborer"
+                        [IDJob]="apply.IDJob" [jobName]="apply.jobName" [laborerName]="apply.laborerName"
+                        [avatar]="apply.avatar" [status]="apply.status">
+                    </app-tag-applywork>
+                </ng-container>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>

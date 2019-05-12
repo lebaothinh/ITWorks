@@ -1,0 +1,104 @@
+<div class="manageWorks container">
+  <mat-tab-group [(selectedIndex)]="index" (selectedTabChange)="resetState($event)">
+    <mat-tab label="Manage Work">
+      <ng-template matTabContent>
+        <div class="content">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Location</th>
+                <th>Position</th>
+                <th>Job Name</th>
+                <th>Post Date</th>
+                <th>Ex-Date</th>
+                <th>Salary</th>
+                <th>Hot Job</th>
+                <th>Update</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let job of arrJobs">
+                <td>{{job.IDJob}}</td>
+                <td>{{job.location}}</td>
+                <td>{{job.position}}</td>
+                <td>{{job.jobName}}</td>
+                <td>{{job.postDate | date: 'dd/MM/yyyy'}}</td>
+                <td>{{job.expirationDate | date: 'dd/MM/yyyy'}}</td>
+                <td>{{job.salary}}</td>
+                <td>
+                    <i *ngIf="!job.hotJob" class="fas fa-check-circle" style="color:black"></i>
+                    <i *ngIf="job.hotJob" class="fas fa-check-circle" style="color:red"></i>
+                </td>
+                <td><button class="btn btn-warning" (click)="updateJob(job.IDJob)">Update</button></td>
+                <td><button class="btn btn-danger" (click)="deleteJob(job.IDJob)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Add A Work">
+      <ng-template matTabContent>
+        <div class="content">
+          <form [formGroup]="formData" class="row" (ngSubmit)="btnOKClick()">
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput id="position" formControlName="position" placeholder="Position">
+              </mat-form-field><br />
+              <mat-form-field>
+                <input matInput id="jobName" formControlName="jobName" placeholder="Job Name">
+              </mat-form-field><br />
+              <mat-form-field>
+                <input matInput type="date" id="postDate" [value]="formData.value.postDate | date:'yyyy-MM-dd'"
+                  formControlName="postDate" placeholder="Post Date">
+              </mat-form-field><br />
+            </div>
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput id="salary" formControlName="salary" placeholder="Salary">
+              </mat-form-field><br />
+              <mat-form-field>
+                <mat-select id="Location" placeholder="Location" formControlName="IDLocation">
+                  <mat-option *ngFor="let position of arrPositions" [value]="position.IDLocation">
+                    {{position.locationName}}</mat-option>
+                </mat-select>
+              </mat-form-field><br />
+              <mat-form-field>
+                <input matInput type="date" id="expirationDate"
+                  [value]="formData.value.expirationDate | date:'yyyy-MM-dd'" formControlName="expirationDate"
+                  placeholder="Expiration Date">
+              </mat-form-field><br />
+            </div>
+            <div class="ckeditor">
+              <p>Top 3 Reasons</p>
+              <editor class="editor" [apiKey]="apiKey" formControlName="top3Reasons" [init]="tinyConfig">
+              </editor>
+            </div>
+            <div class="ckeditor">
+              <p>Job Content</p>
+              <editor class="editor" [apiKey]="apiKey" formControlName="jobContent" [init]="tinyConfig">
+              </editor>
+            </div>
+            <div class="ckeditor">
+              <p>Skills And Experience</p>
+              <editor class="editor" [apiKey]="apiKey" formControlName="skillsAndExperience" [init]="tinyConfig">
+              </editor>
+            </div>
+            <div class="ckeditor">
+              <p>Reason Working</p>
+              <editor class="editor" [apiKey]="apiKey" formControlName="reasonWorking" [init]="tinyConfig">
+              </editor>
+            </div>
+            <div class="ckeditor">
+              <mat-checkbox formControlName="hotJob" [(ngModel)]="formData.value.hotJob" name="hotJob">Create a hot job!
+              </mat-checkbox>
+            </div>
+            <div class="button"><button class="btn btn-success" type="submit">OK</button></div>
+          </form>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>

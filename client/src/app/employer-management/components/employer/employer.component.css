@@ -1,0 +1,34 @@
+.employer{
+    background-color: white;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.header{
+    padding-top: 80px;
+    background-color: #4F62D4;
+    text-align: center;
+    color: white;
+}
+.footer{
+    margin:20px 0;
+}
+#signin{
+    text-align: right;
+}
+button{
+    margin: 5px 0;
+}
+.companyLogo{
+    width: 100%;
+    margin: 20px auto;
+}
+.logo{
+    text-align: center;
+    border: 1px solid #e1e2e3;
+    cursor: pointer;
+    display: flex;
+}
+.logo img{
+    width: 100%;
+    margin: auto;
+}

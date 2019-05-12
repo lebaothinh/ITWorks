@@ -1,0 +1,120 @@
+.home{
+    color: white;
+    text-align: center;
+    margin: auto;
+    font-style: inherit;
+    box-sizing: border-box;
+}
+.home h1{
+    font-size: 3.5em;
+}
+.home p{
+    font-size: 1.2em;
+}
+.home input{
+    width: 50%;
+    margin-bottom: 1em;
+    display: block;
+    margin:50px auto;
+}
+.home button{
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 50px;
+}
+.mainbackground{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 700px;
+}
+.backgroundcolor{
+    background-color: #3b51d1e3;
+    width: 100%;
+    height: 700px;
+    /* opacity: 0.6; */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.imgbackground{
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.background{
+    height: 700px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding-top: 100px;
+}
+.populartag{
+    margin:50px auto;
+    margin-top: 80px;
+}
+.btn-circle{
+    border-radius: 1.875rem;
+}
+.search{
+    background-color: rgb(230, 79, 79); 
+    color:white;
+    width: 8em;
+}
+.search:hover{
+    background-color: red;
+}
+.alljobs{
+    background-color: transparent; 
+    color:white; 
+    border: 2px solid white;
+    width: 8em;
+}
+.alljobs:hover{
+    background-color: white; 
+    color:#333333; 
+}
+#bigtopemployer{
+    width: 100%;
+    background-color: #e9e9e9;
+    margin: 0;
+    padding: 30px;
+}
+.searchjobs{
+    margin: auto;
+    background-color: white;
+    padding: 10px;
+}
+.topemployers{
+    width: 80%;
+    margin: 0 auto;
+}
+.topemployers h3{
+    margin-left: 35px;
+}
+.employer{
+    display: flex;
+    padding: 20px;
+}
+.employer:hover{
+}
+.insideemployer{
+    margin: 0 auto;
+    padding: 15px;
+    background-color: white;
+    height: 385px;
+    width: 321px;
+    text-align: center;
+    transition:  all 1s ease-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    border-radius: 5px;
+}
+.insideemployer:hover{
+    transition:  all 0.3s ease-out;
+    transform: translateY(-10px);
+    box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.541);
+}

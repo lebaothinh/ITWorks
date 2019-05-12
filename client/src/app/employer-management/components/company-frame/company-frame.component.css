@@ -1,0 +1,62 @@
+.companyFrame{
+    background-color: white;
+    margin: 4% 0;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    transition: all 0.3s ease-out;
+    min-height: 359px;
+}
+.companyFrame:hover{
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.568);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-out;
+}
+.companyAvatar{
+    min-height: 170.84px;
+}
+.companyAvatar img{
+    width: 100%;
+}
+.companyInfo{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.companyHeader{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.companyLogo{
+    margin-top: -10px;
+    background-color: white;
+    height: 100px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    border-radius: 4%;
+    display: inline-grid;
+}
+.companyLogo img{
+    width: 100%;
+    margin: auto;
+}
+.companyName{
+    margin: 0 5px;
+    text-align: center;
+    padding: 0 !important;
+}
+.companyStar{
+    padding: 0 !important;
+    text-align: right;
+}
+.companyDesc{
+    margin-top: 10px;
+    min-height: 48px;
+}
+.companyFooter{
+    bottom: 0;
+}
+.companyJobs{
+    color: #4F62D4;
+    text-align: right;
+}
+.fa-star{
+    color: red;
+}

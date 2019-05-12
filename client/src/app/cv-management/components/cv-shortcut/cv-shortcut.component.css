@@ -1,0 +1,35 @@
+.cvshortcut{
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    padding: 10px !important;
+    margin: 10px !important;
+    position: relative;
+    height: 200px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.cvshortcut:hover{
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.568);
+    transform: translateY(-3px);
+    transition: all 0.3s ease-out;
+}
+.cvshortcut mat-chip-list{
+    position: absolute;
+    bottom: 0;
+}
+.cvshortcut .image{
+    width: 100%;
+    height: 100%;
+    display: inline-grid;
+}
+.cvshortcut .image img{
+    width: 80%;
+    margin: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+}
+.cvshortcut p{
+    position: absolute;
+    top: 33px;
+}
+.if{
+    overflow: hidden;
+}

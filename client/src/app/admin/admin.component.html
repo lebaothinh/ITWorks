@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
+           <div class="menu">
+            <h6><button mat-button routerLink="thongkedoanhthu">Thống Kê Doanh Thu</button></h6>
+            <h6><button mat-button routerLink="quantrihethong">Quản Trị Hệ Thống</button></h6>
+            <h6><button mat-button routerLink="quanlynhatuyendung">Quản Lý Nhà Tuyển Dụng</button></h6>
+            <h6><button mat-button routerLink="quanlynguoilaodong">Quản Lý Người Lao Động</button></h6>
+            <h6><button mat-button routerLink="quanlydanhgia">Quản Lý Bình Luận</button></h6>
+           </div>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <p class="nextback">
+                <button mat-mini-fab *ngIf="!opened" (click)="sidenav.toggle()"><i class="fas fa-chevron-right"></i></button>
+                <button mat-mini-fab *ngIf="opened" (click)="sidenav.toggle()"><i class="fas fa-chevron-left"></i></button>
+            </p>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>

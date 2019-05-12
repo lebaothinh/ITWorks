@@ -1,0 +1,29 @@
+<div class="companyReviews container">
+  <div class="header">
+    <h3>6,550 Company Reviews for You</h3>
+    <h5>What are people saying about your company? Find out now!</h5>
+    <br/>
+    <div class="searchCompany">
+      <input placeholder="Enter company name" [(ngModel)]="keywords">&nbsp;
+      <button mat-raised-button (click)="searchCompany()">Search</button>
+    </div>
+  </div>
+  <br/>
+  <div class="companys">
+    <div class="filter">
+      <h3>Companies Hiring Now</h3>
+      <h6 id="sortby">Sort by:
+        <span>Ho Chi Minh</span> |
+        <span>Ha Noi</span> |
+        <span>Da Nang</span> |
+        <span (click)="loadAllEmployer()">All</span>
+      </h6>
+    </div>
+    <div class="content row">
+      <ng-container *ngFor="let company of arrCompanys">
+        <app-company-frame [routerLink]="['/company',company.IDCompany]" class="col-md-4" [avatar]="company.avatar" [logo]="company.logo" [companyName]="company.companyName"
+          star="4.5" [generalDescription]="company.generalDescription" [arrlocation]="company.brands" jobs="3"></app-company-frame>
+      </ng-container>
+    </div>
+  </div>
+</div>

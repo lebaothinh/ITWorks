@@ -1,0 +1,16 @@
+<div class="sendemail">
+    <form [formGroup]="makeQuestion" (ngSubmmit)="onAnswer()">
+      <h3 style="text-align: center">Answer Question</h3>
+      <div class="editor">
+        <p>Question: {{makeQuestion.value.Title}}</p>
+        <p [innerHtml]="makeQuestion.value.Content"></p>
+        <editor id="messageContent" [apiKey]="apiKey" formControlName="Answer" [init]="tinyConfig"></editor>
+      </div>
+      <div style="text-align: right">
+        <button mat-raised-button style="color: royalblue" type="submit" (click)="onAnswer()">Answer</button>
+        &nbsp;&nbsp;
+        <button mat-raised-button style="color:red" (click)="onClose()" type="button">Cancel</button>
+        &nbsp;&nbsp;
+      </div>
+    </form>
+  </div>

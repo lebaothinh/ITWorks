@@ -1,0 +1,31 @@
+<div class="companyFrame">
+  <div class="companyAvatar">
+    <img  [src]="avatar">
+  </div>
+  <div class="companyInfo">
+    <div class="companyHeader row">
+      <div class="companyLogo col-md-4">
+        <img [src]="logo"/>
+      </div>
+      <div class="companyName col-md-6">
+        <h5>{{companyName | slice : 0 : 30}}<span *ngIf="companyName.length>30==true">...</span></h5>
+      </div>
+      <div class="companyStar">
+        <p><i class="fas fa-star"></i>
+          <span> {{star}}</span></p>
+      </div>
+    </div>
+    <div class="companyDesc">{{generalDescription | slice : 0 : 80}}<span *ngIf="generalDescription.length>80==true">...</span></div>
+    <div class="companyFooter row">
+      <p class="col-md-6">
+        <select>
+          <option>1</option>
+        </select>
+      </p>
+      <p class="companyJobs col-md-6">
+        More jobs
+        <i class="fa fa-caret-right"></i>
+      </p>
+    </div>
+  </div>
+</div>

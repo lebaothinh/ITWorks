@@ -1,0 +1,17 @@
+<div class="sendemail">
+  <h3 style="text-align: center">Send Email</h3>
+  <div class="editor">
+    <p><b>Name:</b> {{data.laborerName}}</p>
+    <p><b>Job Name:</b> {{data.jobName}}</p>
+    <editor id="messageContent" [apiKey]="apiKey" [(ngModel)]="messageContent" [init]="tinyConfig"></editor>
+  </div>
+
+  <div style="text-align: right">
+    <button mat-raised-button style="color: royalblue" (click)="AcceptAndSendEmail()">Accept & Send Email</button>
+    &nbsp;&nbsp;
+    <button mat-raised-button style="color:indigo" (click)="AcceptAndContactLater()">Accept & Contact Later</button>
+    &nbsp;&nbsp;
+    <button mat-raised-button style="color:red" (click)="onClose()">Cancel</button>
+    &nbsp;&nbsp;
+  </div>
+</div>

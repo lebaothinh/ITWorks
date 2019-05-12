@@ -1,0 +1,10 @@
+<div class="employercard" >
+  <div id="logo">
+      <img src="{{logo}}">
+  </div>
+  <h4>{{companyName | slice : 0 : 55}}<span *ngIf="companyName.length>55==true">...</span></h4>
+  <div class="row">
+    <p class="col-md-6" style="color:brown; font-style: oblique;cursor: pointer;"><span matBadge="{{jobs}}" matBadgeOverlap="false" matBadgeColor="warn">Current Jobs</span></p>
+    <p class="col-md-6" style="color:#3F51B5">{{headquarters}}</p>
+  </div>
+</div>

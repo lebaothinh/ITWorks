@@ -1,0 +1,33 @@
+<div class="messagepopup" id="messagePopup">
+  <div class="exit" (click)="onClose()">
+      <i class="far fa-times-circle"></i>
+  </div>
+  <div class="row bottop top">
+    <div class="col-md-3">
+      <img id="logo"
+        src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.0-9/27971555_793750287462524_6179696112042107055_n.jpg?_nc_cat=100&_nc_eui2=AeE4KB1t8BqioA9_hWM-sBE7eSUXdkXekoAh-iQ_A571Bdj3vgYH5_jJkdYaDcY8chE8u_NlHQi3orIfadWITCddq7pZKbDwN7iA_pGrZXtgqA&_nc_oc=AQl9xshy2DOhp77SV4KTD9HUZM5W9Id5e8S00KgDiMMwgGlOMChiAJVU1dUKUSHSXZw&_nc_ht=scontent.fsgn5-5.fna&oh=cb1ad1f8543e82e8bf7b32f82f93a7ea&oe=5D38F4CA" />
+    </div>
+    <div class="col-md-9">
+      <h5>Elvis Thinh    <span><i class="fas fa-circle"></i></span></h5>
+    </div>
+  </div>
+  <div class="middle" id="middle">
+    <ng-container *ngFor="let message of arrMessages">
+      <app-message-content contentEditable='true' [images]="message.images" [text]="message.text" [ismine]="message.ismine"
+        [status]="message.status"></app-message-content>
+    </ng-container>
+  </div>
+  <div class="row bottop bot" id="bot">
+      <div class="col-md-12" id="textarea" contentEditable data-placeholder="Enter text...">
+      </div>
+      <div class="row" id="send">
+        <div class="col-md-8">
+            <i class="fas fa-images"></i>
+        </div>
+        <div class="col-md-4 button">
+          <button (click)="SendMessage()" mat-raised-button ><i style="color:#00A7FF;"  class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+  </div>
+  
+</div>

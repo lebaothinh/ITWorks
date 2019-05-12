@@ -1,0 +1,14 @@
+<div class="row cvshortcut">
+  <div class="col-md-3 image">
+    <img  [src]="pathimg+'/'+avatar" />
+  </div>
+  <div class="col-md-9">
+    <div class="if">
+      <h4>{{name}}</h4>
+      <p [innerHtml]="description"></p>
+    </div>
+    <mat-chip-list>
+      <mat-chip *ngFor="let skill of arrSkills" [routerLink]="['/search',skill.skillName]">#{{skill.skillName}}</mat-chip>
+  </mat-chip-list>
+  </div>
+</div>

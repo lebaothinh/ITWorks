@@ -1,0 +1,13 @@
+#managequestions{
+    margin-top: 60px !important;
+    background-color: white;    
+}
+#btnanswer{
+    color:gold;
+    border: 2px solid gold;
+    background-color: transparent;
+}
+#btnanswer:hover{
+    color:white;
+    background-color: gold;
+}

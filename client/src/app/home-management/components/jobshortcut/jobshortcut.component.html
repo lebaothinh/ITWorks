@@ -1,0 +1,20 @@
+<div class="job row">
+  <div class="companyLogo col-md-3">
+    <div id="logoin">
+        <img [src]="logo">
+    </div>
+  </div>
+  <div class="jobcontent col-md-7">
+    <h4>{{jobName | slice: 0: 50}}<span *ngIf="jobName.length>50==true">...</span></h4>
+    <p><i style="color: forestgreen" class="fas fa-dollar-sign"></i> {{salary}}</p>
+    <p>{{jobContent | slice : 0  : 150 }}...</p>
+    <mat-chip-list>
+      <mat-chip class="skill" *ngFor="let jobSkill of arrJobSkills">{{jobSkill.skillName}}</mat-chip>
+    </mat-chip-list>
+  </div>
+  <div class="joblocationtime col-md-2">
+    <p>Hot Job</p>
+    <h6 id='location'>{{location}}</h6>
+    <h6 id='postdate'>{{postDate | date}}</h6>
+  </div>
+</div>

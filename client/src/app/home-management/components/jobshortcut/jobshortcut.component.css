@@ -1,0 +1,39 @@
+.job{
+    width: 100%;
+    margin: 0 ;
+    margin-bottom: 10px !important;
+    box-sizing: border-box;
+    background-color: #f1f2f3;
+}
+#logoin{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    height: auto;
+}
+#logoin img{
+    height: 100%;
+}
+.companyLogo{
+    padding: 15px;
+}
+.companyLogo img{
+    width: 100%;
+}
+.jobcontent{  
+    padding: 10px;
+}
+.joblocationtime{
+    padding: 10px;
+
+}
+.joblocationtime p{
+    background-color: orange;
+    color:white;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+}
+.joblocationtime #location{
+    line-height: 80%;
+}

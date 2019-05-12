@@ -1,0 +1,33 @@
+.cvform{
+    background-color:transparent;
+    padding: 0 !important;
+    margin-top: 62px;
+    position: relative;
+    background-color: white;
+}
+.formCV{
+    text-align: center;
+}
+.formCV mat-form-field{
+    width: 80%;
+}
+.formCV p {
+    text-align: left;
+}
+.if{
+    padding: 10px;
+    margin: 10px;
+}
+.ckeditor{
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+}
+.editor{
+    height: auto;
+}
+#seecv{
+    position: fixed;
+    top: 9%;
+    right: 7.5%;
+}

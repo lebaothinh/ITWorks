@@ -1,0 +1,19 @@
+.employercard{
+    margin:  auto;
+}
+.employercard h4{
+    margin: 15% auto;
+    cursor: pointer;
+}
+.employercard #logo{
+    margin: auto;
+    height: 170px;
+    width: 170px;
+    display: flex;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12); */
+    padding: 5px;
+}
+#logo img {
+    width: 100%;
+    margin: auto;
+}

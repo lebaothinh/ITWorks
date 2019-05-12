@@ -1,0 +1,7 @@
+#addressProfile{
+    width: 100%;    
+    text-align: center;
+}
+#addressProfile mat-form-field{
+    width: 100%;
+}

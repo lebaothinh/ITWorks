@@ -1,0 +1,33 @@
+.headertag{
+    background-color: #f1f1f1;
+    padding: 3px;
+    margin: 5px;
+}
+#headeravatar{
+    max-height: 50px;
+}
+.table{
+    margin: 5px !important;
+    border: 1px solid #f1f1f1;
+}
+#content{
+    margin: 20px;
+}
+#contentbox{
+    width: 100%; 
+    height: 300px;
+    border: 1px solid #f1f1f1;
+    border-radius: 40px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    margin-bottom: 10px;
+}
+#contentbox:focus{
+    outline: none;
+}
+button{
+    border: 1px solid;
+}
+button:focus{
+    outline: none;
+}

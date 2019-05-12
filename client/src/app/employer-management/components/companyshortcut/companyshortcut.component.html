@@ -1,0 +1,18 @@
+<div class="company row">
+  <div class="companyLogo col-md-3">
+    <img [src]="logo">
+  </div>
+  <div class="companyContent col-md-7">
+    <h4>{{companyName}}</h4>
+    <p>
+      <i class="fas fa-cog"></i> {{services}} &nbsp;
+      <i class="fas fa-user"></i> {{numberOE}}+
+      <i class="fas fa-globe-asia"></i> {{country}}</p>
+    <mat-chip-list>
+      <mat-chip *ngFor="let companySkill of arrCompanySkills">{{companySkill.skillName}}</mat-chip>
+    </mat-chip-list>
+  </div>
+  <div class="location col-md-2">
+    <h6 id='location'>{{headquarters}}</h6>
+  </div>
+</div>

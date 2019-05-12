@@ -1,0 +1,38 @@
+<form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <div class="addreview">
+        <div>
+          <mat-form-field>
+            <input formControlName="title" matInput placeholder="Tiêu Đề">
+          </mat-form-field><br/>
+          <mat-form-field>
+            <textarea formControlName="like" matInput placeholder="Điều bạn thích ở công ty này!"></textarea>
+          </mat-form-field><br/>
+          <mat-form-field>
+            <textarea formControlName="dislike" matInput placeholder="Điều bạn cần công ty cải thiện!"></textarea>
+          </mat-form-field><br/>
+        </div>
+        <div id="recommendation">
+            <mat-slide-toggle color="primary" formControlName="recommendation" [(ngModel)]="recommendation" >Recommendation!</mat-slide-toggle>
+        </div>
+        <div class="stars">
+          <input style="display: none"  formControlName="star"/>
+          <form action="" >
+            <input class="star star-5" id="star-5" type="radio" name="star"/>
+            <label class="star star-5" (click)="rating=5" for="star-5"></label>
+            <input class="star star-4" id="star-4" type="radio" name="star"/>
+            <label class="star star-4" (click)="rating=4" for="star-4"></label>
+            <input class="star star-3" id="star-3" type="radio" name="star"/>
+            <label class="star star-3" (click)="rating=3" for="star-3"></label>
+            <input class="star star-2" id="star-2" type="radio" name="star"/>
+            <label class="star star-2" (click)="rating=2" for="star-2"></label>
+            <input class="star star-1" id="star-1" type="radio" name="star"/>
+            <label class="star star-1" (click)="rating=1" for="star-1"></label>
+          </form>
+        </div>
+        <div>
+          <button mat-raised-button type="submit" class="btn btn-success" [disabled]="!formData.valid">
+            ĐÁNH GIÁ
+          </button>
+        </div>
+      </div>
+</form>

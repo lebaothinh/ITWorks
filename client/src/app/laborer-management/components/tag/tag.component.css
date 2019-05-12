@@ -1,0 +1,19 @@
+.tag{
+    position: relative;
+    display: inline;
+}
+#buttoncontent{
+    display: inline;
+}
+#buttoncontent:hover ~ .symbol{
+    display: inline;
+}
+.symbol{
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    display: none;
+}
+i {
+    color: red;
+}

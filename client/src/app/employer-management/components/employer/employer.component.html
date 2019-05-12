@@ -1,0 +1,27 @@
+<div class="container employer">
+  <div class="header">
+    <h2>Want great IT candidates?</h2>
+    <p>Give us your details and our Customer Love team will contact you about our service!</p>
+    <button mat-raised-button color="warn" style="font-weight: bold" (click)="openSignInEmployerDialog(1)">
+      Yes, I want great IT candidates!
+    </button>&nbsp;
+    <button mat-raised-button color="primary" style="font-weight: bold" (click)="openSignInEmployerDialog(0)">
+      Already a customer? Sign In
+    </button>
+    <br/>
+    <br/>
+    <h2>Call us today</h2>
+    <p>Hotline HCM:
+      <span>0164 701 3955</span>
+    </p>
+    <br/>
+  </div>
+  <div class="footer">
+    <h2>Great IT companies choose us</h2>
+    <div class="companyLogo row">
+      <div *ngFor="let employer of arrCompanys" class="logo col-md-2" [routerLink]="['/company',employer.IDCompany]">
+        <img [src]="pathimg+'/Company/logo/'+employer.logo">
+      </div>
+    </div>
+  </div>
+</div>

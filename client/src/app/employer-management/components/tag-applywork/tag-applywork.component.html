@@ -1,0 +1,31 @@
+<div class="headertag" *ngIf="status!=5">
+  <table class="table">
+    <tbody>
+      <tr>
+        <td style="width: 180px">{{laborerName}}</td>
+        <td style="width: 400px">{{jobName}}</td>
+        <td style="width: 85px">
+          <img id="headeravatar" [src]="imgPath+'/'+avatar" />
+        <td>
+          <p style="color:royalblue">
+            <i *ngIf="status==0" class="fas fa-paper-plane"></i>
+            <i *ngIf="status==1" class="fas fa-eye"></i>
+            <i *ngIf="status==2" class="fas fa-envelope"></i>
+            <i *ngIf="status==3" class="fas fa-phone-square"></i>
+            <i *ngIf="status==4" class="fas fa-frown"></i>
+          </p>
+        </td>
+        <td>
+          <button mat-raised-button style="color: black" (click)="openDialogPDF()">See Information</button>
+        </td>
+        <td>
+          <button mat-raised-button style="color: royalblue" (click)="openDialogAccept()">Accept</button>
+        </td>
+        <td>
+          <button *ngIf="status==0 || status==1 || status==2 || status==3" mat-raised-button style="color:red" (click)="reject()">Reject</button>
+          <button *ngIf="status==4" mat-raised-button style="color:red" (click)="remove()">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>IDLaborer</th>
+      <th>LaborerName</th>
+      <th>DateOfBirth</th>
+      <th>Sex</th>
+      <th>Email</th>
+      <th>PhoneNumber</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let laborer of arrLaborers">
+      <td>{{laborer.IDLaborer}}</td>
+      <td>{{laborer.laborerName}}</td>
+      <td>{{laborer.dateOfBirth | date: 'yyyy-MM-dd'}}</td>
+      <td>{{laborer.sex == true ? 'Male' : 'Female'}}</td>
+      <td>{{laborer.email}}</td>
+      <td>{{laborer.phoneNumber}}</td>
+      <td><button mat-raised-button class="btn btn-success" (click)="onUpdateLaborer(laborer)">Update</button></td>
+      <td><button mat-raised-button class="btn btn-danger" (click)="onDeleteLaborer(laborer.IDLaborer)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

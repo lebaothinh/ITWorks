@@ -1,0 +1,32 @@
+.messagecontent{
+    border-radius: 20px;
+    width: 80%;
+    padding: 5px;
+    overflow: auto;
+    margin: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+}
+.messagecontent img {
+    max-width: 33%;
+    margin: 5px;
+}
+.messagecontent p {
+    margin: 5px;
+}
+.status{
+    text-align: right;
+    font-size: 10px;
+}
+.onleft{
+    left: 0;
+    background-color: #00A7FF;
+    color: white;
+    
+}
+.onright{
+    right: 0;
+    background-color: #fbfbfb;
+    color:black;
+    align-items: flex-end;
+    margin-left: 60px;
+}

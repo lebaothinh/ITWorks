@@ -1,0 +1,10 @@
+<div class="container searchjobs row">
+  <div class="jobs col-md-8">
+    <ng-container *ngFor="let job of arrJobs">
+      <app-jobshortcut [routerLink]="['/job',job.IDJob]"  [IDCompany]="company.IDCompany" [jobName]="job.jobName" [salary]="job.salary" [jobContent]="job.jobContent" [arrJobSkills]="job.arrSkills" [location]="job.locationName" [postDate]="job.postDate" [logo]="job.logo"></app-jobshortcut>
+    </ng-container>
+  </div>
+  <div class="asideright col-md-4">
+
+  </div>
+</div>

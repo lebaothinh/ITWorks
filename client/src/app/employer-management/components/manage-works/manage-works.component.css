@@ -1,0 +1,26 @@
+.manageWorks{
+    background-color: white;
+    padding-top: 61px;
+}
+.manageWorks .content{
+    overflow: hidden;
+    padding: 20px;
+}
+.manageWorks mat-form-field{
+    width: 100%;
+}
+.ckeditor{
+    padding-top: 20px;
+    width: 97%;
+    margin: 0 auto;
+    text-align: left;
+}
+.editor{
+    height: auto;
+}
+.button{
+    padding-top: 20px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}

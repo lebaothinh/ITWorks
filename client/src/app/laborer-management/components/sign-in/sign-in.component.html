@@ -1,0 +1,127 @@
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <i class="fas fa-sign-in-alt"></i>
+      &nbsp; Sign In For Customer
+    </ng-template>
+    <mat-card-content>
+      <div class="container">
+        <form [formGroup]="loginGroup" (ngSubmit)="onLogin() && loginGroup.valid">
+          <div class="form-group formLogin">
+            <mat-form-field>
+              <input matInput placeholder="Username(*)" formControlName="account" class="username">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput placeholder="Password(*)" formControlName="password" type="password">
+            </mat-form-field>
+
+            <div>
+              <button mat-raised-button type="button" class="btn btn-primary" (click)="onClose()">
+                CLOSE
+              </button>
+              &nbsp;
+              <button mat-raised-button type="submit" class="btn btn-success" [disabled]="!loginGroup.valid">
+                LOGIN
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <i class="fas fa-user-circle"></i>&nbsp; Create A Account
+    </ng-template>
+    <mat-card-content>
+      <div class="container">
+        <form [formGroup]="registerGroup" (ngSubmit)="onRegister() && registerGroup.valid">
+          <div class="form-group formRegister">
+            <p>Personal Infomation</p>
+            <div class="if">
+              <div class="row">
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Full name(*)" formControlName="laborerName" class="laborerName">
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Date of birth(*)" type="date" formControlName="dateOfBirth" class="dateOfBirth">
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-radio-group class="col-md-6" formControlName="sex">
+                  <mat-radio-button value="1">Male</mat-radio-button>&nbsp;
+                  <mat-radio-button value="2">Female</mat-radio-button>
+                </mat-radio-group>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Email(*)" type="email" formControlName="email" class="email">
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Phone Number(*)" formControlName="phoneNumber" class="phoneNumber">
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Description(*)" formControlName="description" class="description">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <p>Account information for the login section</p>
+            <div class="if">
+              <mat-form-field>
+                <input matInput placeholder="Username(*)" formControlName="account" class="username">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput placeholder="Password(*)" formControlName="password" type="password">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput placeholder="Repeat the password(*)" type="password">
+              </mat-form-field>
+            </div>
+            <div>
+              <button mat-raised-button type="button" class="btn btn-primary" (click)="onClose()">
+                CLOSE
+              </button>
+              &nbsp;
+              <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="!registerGroup.valid">
+                REGISTER
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <i class="fas fa-lock-open"></i>
+      &nbsp; Forget password
+    </ng-template>
+    <mat-card-content>
+      <div class="container">
+        <form [formGroup]="forgetGroup" (ngSubmit)="onSend() && forgetGroup.valid">
+          <div class="form-group formLogin">
+            <mat-form-field>
+              <input matInput placeholder="Email(*)" formControlName="email" class="email">
+            </mat-form-field>
+            <div>
+              <button mat-raised-button type="button" class="btn btn-primary" (click)="onClose()">
+                CLOSE
+              </button>
+              &nbsp;
+              <button mat-raised-button type="submit" class="btn btn-success" [disabled]="!forgetGroup.valid">
+                SEND
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-tab>
+</mat-tab-group>

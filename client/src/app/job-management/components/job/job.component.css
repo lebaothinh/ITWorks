@@ -1,0 +1,86 @@
+.job{
+    background-color: white;
+    padding-top: 50px;
+}
+.space{
+    border-top:1px solid #e1e2e3;
+    margin: 20px 0;
+}
+.images{
+    margin: 30px 0;
+}
+.images img{
+    width: 100% !important;
+    height: 100%;
+}
+.info{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.infocompany{
+    text-align: center;
+}
+.infoc{
+    padding: 3%;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 3px rgba(0,0,0,.12);
+}
+.logo{
+    margin-bottom: 20px;
+}
+.logo img{
+}
+.infojob{
+    
+}
+.infoj{
+    padding: 3%;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+
+}
+.infoj .arrSkills{
+    margin-top: 20px;
+}
+.infoj .arrSkills .skill{
+    border: 1px solid #e1e2e3;
+    padding: 2px 5px;
+    margin-right: 10px;
+}
+.infoj .btnApply{
+    height: 50px;
+    width: 150px;
+}
+.skill{
+    background-color: #f1f1f1;
+    border: none !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,.24), 0 0 1px rgba(0,0,0,.12);
+}
+.fa-cog{
+    color:rgba(0, 0, 0, 0.726)
+}
+.fa-user{
+    color:dodgerblue
+}
+.fa-globe-asia{
+    color:#3F51B5
+}
+.fa-calendar-alt{
+    color:rgba(0, 0, 0, 0.726)
+}
+.fa-clock{
+    color:rgba(0, 0, 0, 0.726)
+}
+.fa-hand-holding-usd{
+    color: green;
+}
+.fa-map-marker-alt{
+    color:firebrick;
+}
+.fa-calendar-alt{
+    color:rgba(0, 0, 0, 0.726)
+}
+#viewourcompany{
+    cursor: pointer;
+}
+#viewourcompany:hover{
+    font-weight: bold;
+}

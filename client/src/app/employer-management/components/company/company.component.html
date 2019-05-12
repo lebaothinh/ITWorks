@@ -1,0 +1,121 @@
+<div class="container company">
+  <div class="avatar">
+    <img *ngIf="company.avatar != null" [src]="pathimg+'/Company/avatar/'+company.avatar">
+  </div>
+  <div class="generalif row">
+    <div class="col-md-2" style="padding: 2px; color:transparent">
+      <div class="logo">
+          <img *ngIf="company.logo != null"  [src]="pathimg+'/Company/logo/'+company.logo">
+      </div>
+    </div>
+    <div class="col-md-7" style="padding: 2px 10px; color:transparent">
+      <div class="summaryif">
+          <h3>{{company.companyName | slice : 0 : 40}}</h3>
+          <p>
+            <i style="color:firebrick" class="fas fa-map-marker-alt"></i> <span *ngFor="let branch of company.branches"> {{branch.locationName}}, </span></p>
+          <p>
+            <i style="color:rgba(0, 0, 0, 0.726)" class="fas fa-cog"></i> {{company.services}} &nbsp;
+            <span>
+              <i style="color:dodgerblue" class="fas fa-user"></i> {{company.numberOE}}</span>
+          </p>
+          <p>
+            <i style="color:#3F51B5" class="fas fa-globe-asia"></i> {{company.country}}</p>
+          <p>
+            <i style="color:rgba(0, 0, 0, 0.726)"  class="far fa-calendar-alt"></i> {{company.startTime}} - {{company.endTime}}</p>
+      </div>
+    </div>
+    <div class="col-md-3" style="padding: 2px 10px; color:transparent">
+      <div class="option">
+          <div class="buttonoption">
+              <button mat-raised-button id="makequestion" (click)="OpenMakeQuestionDialog()">Make Question</button>
+              <br/>
+              <br/>
+              <button mat-raised-button id="addareview" (click)="OpenAddReviewDialog()">Add a review</button>
+              <br>
+              <br>
+              <button mat-raised-button *ngIf="!follow" id="follow" (click)="onClickFollow()">Follow</button>
+              <button mat-raised-button *ngIf="follow" id="unfollow" (click)="onClickFollow()">Unfollow</button>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="row detailif">
+    <div class="col-md-8 overviewandreviewsandjobs">
+      <div class="overviewandreviews">
+        <mat-tab-group>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              Overview
+            </ng-template>
+            <mat-card-content>
+              <div>
+                <p>{{company.overView}}</p>
+              </div>
+            </mat-card-content>
+          </mat-tab>
+          <mat-tab>
+          <ng-template mat-tab-label>
+            Reviews
+          </ng-template>
+          <mat-card-content>
+              <div class="allcomments">
+                <ng-container *ngFor="let review of arrReviews">
+                    <app-comment [title]="review.title" [star]="review.star" [recommendation]="review.recommendation" [reviewDate]="review.reviewDate" [like]="review.like" [dislike]="review.dislike"></app-comment>
+                </ng-container>
+              </div>
+            </mat-card-content>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      <div class="jobs">
+        <ng-container *ngFor="let job of arrJobs">
+          <div class="jobshortcut">
+              <app-jobshortcut [routerLink]="['/job',job.IDJob]" [IDJob]="job.IDJob" [IDCompany]="company.IDCompany" [jobName]="job.jobName" [salary]="job.salary" [jobContent]="job.jobContent" [arrJobSkills]="job.arrSkills" [location]="job.locationName" [postDate]="job.postDate" [logo]="job.logo"></app-jobshortcut>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="col-md-4 ratingandcomment">
+      <div class="rating">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.4836105162653!2d106.79637301428757!3d10.850774060785303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527374c43baad%3A0xb8b244d75d12213e!2zRlBUIFNvZnR3YXJlIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1546068502085" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <div class="comment">
+        <h5>Total Rating: {{totalReview.totalStar}}</h5>
+        <div class="star">
+            <h4 *ngIf="totalReview.avgStar == 1"><i class="fas fa-star"></i></h4>
+            <h4 *ngIf="totalReview.avgStar == 2"><i class="fas fa-star"></i><i class="fas fa-star"></i></h4>
+            <h4 *ngIf="totalReview.avgStar == 3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h4>
+            <h4 *ngIf="totalReview.avgStar == 4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h4>
+            <h4 *ngIf="totalReview.avgStar == 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h4>
+        </div>
+        <div style="margin:0;padding: 0" class="row">
+          <div class="col-md-2"></div>
+          <div class="star commentleft col-md-6">
+              <p><i class="fas fa-star"></i></p>
+              <p><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+              <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+              <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+              <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+          </div>
+          <div class="commentright col-md-2">
+            <p>{{totalReview.star1}}</p>
+            <p>{{totalReview.star2}}</p>
+            <p>{{totalReview.star3}}</p>
+            <p>{{totalReview.star4}}</p>
+            <p>{{totalReview.star5}}</p>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <h4>
+          <i class="hand fas fa-thumbs-up"></i><span>{{totalReview.recommendationTrue}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="hand fas fa-thumbs-down"></i><span>{{totalReview.recommendationFalse}}</span>
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="mkquestion">
+    <ng-container *ngFor="let qs of arrMakeQuestions">
+      <app-make-question [MakeQuestionDate]="qs.MakeQuestionDate" [Title]="qs.Title" [Content]="qs.Content" [Answer]="qs.Answer"></app-make-question>
+    </ng-container>
+  </div>
+</div>

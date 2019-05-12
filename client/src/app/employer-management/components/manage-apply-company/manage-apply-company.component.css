@@ -1,0 +1,22 @@
+#contactlist{
+    left: 0;
+    top: 20px;
+    z-index: 999;
+}
+#contactlist:focus{
+    outline: none;
+}
+.content{
+}
+#rightslider{
+    padding: 10px;
+    overflow: auto;
+}
+.manageapp{
+    margin-top: 60px !important;
+    position: relative;
+    height: 91vh;
+}
+.mat-drawer-content{
+    z-index: -1;
+}

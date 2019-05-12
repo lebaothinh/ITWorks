@@ -1,0 +1,34 @@
+<div id="managequestions">
+  <table *ngIf="arrQuestions.length!=0; else block" class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Status</th>
+        <th>Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let question of arrQuestions">
+        <tr>
+          <td>{{question.Title}}</td>
+          <td>
+            <p [innerHtml]="question.Content"></p>
+          </td>
+          <td>
+            <p>
+              <span *ngIf="question.Status == false"><i style="color: #f1f1f1" class="fas fa-check-circle"></i></span>
+              <span *ngIf="question.Status == true"><i style="color: lawngreen" class="fas fa-check-circle"></i></span>
+            </p>
+          </td>
+          <td>
+            <button mat-raised-button id="btnanswer" (click)="openAnswerDialog(question)">Answer</button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <ng-template #block>
+    <p>There are no question!</p>
+  </ng-template>
+</div>

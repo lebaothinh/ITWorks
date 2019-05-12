@@ -1,0 +1,9 @@
+<form id="addressProfile" [formGroup]="formData" (ngSubmit)="btnOKClick()">
+  <mat-form-field>
+    <input matInput formControlName="locationName" placeholder="Location Name" />
+  </mat-form-field><br/>
+  <mat-form-field>
+    <input matInput formControlName="map" placeholder="Map Address" />
+  </mat-form-field><br/>
+  <button mat-raised-button color="warn">OK</button>
+</form>

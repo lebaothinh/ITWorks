@@ -1,0 +1,85 @@
+<div class="header fix-top sticky-top row">
+  <div class="logo col-md-2">
+    <img routerLink="/home" src="../../assets/logo.png">
+  </div>
+  <div class="companyreviews col-md-2">
+    <button mat-button routerLink="/companyreviews">Company Reviews</button>
+  </div>
+  <div class=" col-md-2">
+    <button mat-button routerLink="/findcv">Find CV</button>
+  </div>
+  <div class="employers col-md-2">
+    <button mat-button routerLink="/employer">Employers</button>
+  </div>
+  <div id="notification" class="col-md-2">
+    <button mat-button (click)="showNotification($event)">
+      <p style="font-size:20px"><i class="fas fa-bell" [matBadge]="arrNotifications.length" matBadgeColor="warn"></i></p>
+    </button>
+  </div>
+  <div id="sign-in" class="col-md-2">
+    <button mat-button (click)="openSignInDialog()">Sign In As Laborer</button>
+  </div>
+  <div class="notificationboard">
+    <ng-container *ngFor="let notifi of arrNotifications">
+      <div class="row notifitag" [routerLink]="'/job/'+notifi.IDJob">
+        <div class="col-md-3 logotag">
+          <img [src]="pathImg+'/'+notifi.logo" />
+        </div>
+        <div class="col-md-9 messagetag">
+          <p>{{notifi.Message}}</p>
+        </div>
+        <div style="font-size: 10px;">
+          <p style="text-align:right;">{{notifi.Time}}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div style="height: 50px; width: 70px;float: left" (click)="showAvatar($event)" id="personalif">
+    <img src="{{imgSrc}}" alt="avatar" style="border:2px solid white;border-radius: 50%; height: 50px; width: 50px;"
+      class="img-responsive" />
+    <span style="font-size: 20px;" *ngIf="!openAvatar">
+      <i class="fas fa-angle-down" style="color:white"></i>
+    </span>
+    <span style="font-size: 20px;" *ngIf="openAvatar">
+      <i class="fas fa-angle-up" style="color:white"></i>
+    </span>
+  </div>
+  <div class="detail">
+    <ul>
+      <li (click)="logout()">
+        <a>Logout</a>
+      </li>
+      <li id="profileem" routerLink="/profileemployer">
+        <a>Profile</a>
+      </li>
+      <li id="profilela" routerLink="/profilelaborerandadmin">
+        <a>Profile</a>
+      </li>
+      <li (click)="openDialogChangePassword()">
+        <a>Change Password</a>
+      </li>
+      <li id="manage-work" routerLink="/manageworks">
+        <a>Manage Works</a>
+      </li>
+      <li id="manage-apply" routerLink="/manageapply">
+        <a>Manage Apply</a>
+      </li>
+      <li id="manage-apply-company" routerLink="/manageapplycompany">
+        <a>Manage Apply</a>
+      </li>
+      <li id="manage-questions" routerLink="/managequestions">
+        <a>Manage Questions</a>
+      </li>
+      <li id="createcvonline" routerLink="/editcv">
+        <a>Create CV Online</a>
+      </li>
+      <li id="updatecvonline" routerLink="/editcv">
+        <a>Update CV Online</a>
+      </li>
+      <li (click)="openDialogSetting()">
+        <a>Setting</a>
+      </li>
+    </ul>
+  </div>
+
+</div>

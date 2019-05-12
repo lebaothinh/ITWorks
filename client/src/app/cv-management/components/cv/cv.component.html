@@ -1,0 +1,135 @@
+
+<div class="container company">
+  <div class="background mainback row">
+    <div class="col-md-4 avatar">
+      <img  [src]="pathimg+'/'+CV.Avatar" />
+    </div>
+    <div class="col-md-8 gdandname">
+      <h2>{{CV.Name}}</h2>
+      <h5 [innerHtml]="CV.ShortDescription"></h5>
+    </div>
+  </div>
+  <div class="detailif row">
+    <div class="col-md-3">
+      <div class="contact mainback">
+        <div class="title">
+          <h3>CONTRACT</h3>
+        </div>
+        <div class="mainbackcontent">
+          <h4 class="xanhla">ADDRESS</h4>
+          <h6 [innerHtml]="CV.Address"></h6>
+          <h4 class="do">DATE OF BIRTH</h4>
+          <h6>{{CV.DateOfBirth | date:'MMMM d. y'}}</h6>
+          <H4 class="cam">PHONE</H4>
+          <h6>{{CV.Phone}}</h6>
+          <h4 class="xanhduong">EMAIL</h4>
+          <h6>{{CV.Email}}</h6>
+        </div>
+      </div>
+      <div class="about mainback">
+        <div class="title">
+          <h3>ABOUT ME</h3>
+        </div>
+        <div class="mainbackcontent">
+          <div class="gender row">
+            <h4 class="do col-md-6 cantrai">GENDER</h4>
+            <h6 class="col-md-6 canphai" *ngIf="CV.Gender">Male</h6>
+            <h6 class="col-md-6 canphai" *ngIf="!CV.Gender">FeMale</h6>
+          </div>
+          <div class="gpa row">
+            <h4 class="xanhla col-md-3 cantrai">GPA</h4>
+            <h6 class="col-md-9 canphai">{{CV.GPA}}</h6>
+          </div>
+          <div class="major row">
+            <h4 class="xanhduong col-md-4 cantrai">MAJOR</h4>
+            <h6 class="col-md-8 canphai" [innerHtml]="CV.Major"></h6>
+          </div>
+          <div class="cangiua">
+            <h5 [innerHtml]="CV.Character"></h5>
+          </div>
+        </div>
+      </div>
+      <div class="applyposition mainback">
+        <div class="title">
+          <h3>APPLY POSITION</h3>
+        </div>
+        <div class="cangiua mainbackcontent">
+          <h5 [innerHtml]="CV.ApplyPosition"></h5>
+        </div>
+      </div>
+      <div class="hobbies mainback">
+        <div class="title">
+          <h3>HOBBIES</h3>
+        </div>
+        <div class="cangiua mainbackcontent">
+          <div [innerHtml]="CV.Hobbies" ></div>
+        </div>
+      </div>
+      <div class="objective mainback">
+        <div class="title">
+          <h3>OBJECTIVE</h3>
+        </div>
+        <div class="cantrai mainbackcontent">
+          <h5 [innerHtml]="CV.Objective"></h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-8">
+      <div class="workexperience mainback">
+        <div class="title">
+          <h3>WORK EXPERIENCE</h3>
+        </div>
+        <div class="cantrai mainbackcontent">
+          <h6 [innerHtml]="CV.WorkExperience"></h6>
+        </div>
+      </div>
+      <div class="softskills mainback">
+        <div class="title">
+          <h3>SOFT SKILLS</h3>
+        </div>
+        <div class="cangiua mainbackcontent">
+          <h6 [innerHtml]="CV.SoftSkills"></h6>
+        </div>
+      </div>
+      <div class="skills mainback">
+        <div class="title">
+          <h3>SKILLS</h3>
+        </div>
+        <div class="cangiua mainbackcontent">
+          <h6 [innerHtml]="CV.Skills"></h6>
+        </div>
+      </div>
+      <div class="languages mainback">
+        <div class="title">
+          <h3>LANGUAGES</h3>
+        </div>
+        <div class="cangiua mainbackcontent">
+          <h6 [innerHtml]="CV.Languages"></h6>
+        </div>
+      </div>
+      <div class="awards mainback">
+        <div class="title">
+          <h3>AWARDS</h3>
+        </div>
+        <div class="cantrai mainbackcontent">
+          <h6 [innerHtml]="CV.Awards"></h6>
+        </div>
+      </div>
+      <div class="education mainback">
+        <div class="title">
+          <h3>EDUCATION</h3>
+        </div>
+        <div class="cangiua mainbackcontent">
+          <h6 [innerHtml]="CV.Education"></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainback">
+    <div class="title">DETAIL INFOMATION</div>
+    <div class="mainbackcontent">
+      <h5 [innerHtml]="CV.DetailInformation"></h5>
+    </div>
+  </div>
+</div>

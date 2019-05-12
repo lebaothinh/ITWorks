@@ -1,0 +1,26 @@
+<div class="companyReviews container">
+  <div class="header">
+    <h3>6,550 CVs are waiting for You</h3>
+    <h5>Find out now!</h5>
+    <br />
+    <div class="searchCompany">
+      <form (submit)="onSearch()">
+        <input placeholder="Enter skills you need" [(ngModel)]="keywords" name="find">&nbsp;
+        <button mat-raised-button (click)="onSearch()">Search</button>
+      </form>
+    </div>
+  </div>
+  <br />
+  <div class="companys">
+    <div class="content row">
+      <div class="col-md-8">
+        <ng-container *ngFor="let CV of arrCVShortcut">
+          <app-cv-shortcut [routerLink]="['/cv',CV.IDLaborer]" [avatar]="CV.Avatar" [idLaborer]="CV.IDLaborer"
+            [name]="CV.Name" [description]="CV.Description" [arrSkills]="CV.arrSkills"></app-cv-shortcut>
+        </ng-container>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
+</div>

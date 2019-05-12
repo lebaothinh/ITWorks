@@ -1,0 +1,46 @@
+.profile{
+    background-color: white;
+    min-height: 700px;
+    padding: 80px 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.header{
+    color: black;
+    width: 100%;
+}
+.content{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+#contentoverview{
+    min-height: 200px;
+}
+#btnAddAddress{
+    margin: 20px 5px;
+}
+.rowintable{
+    margin: 10px;
+    background-color: #e1e2e377;
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+}
+.rowintable:hover{
+    transition: all 0.2s ease-in;
+    transform: scale(1.005);
+    background-color: #e1e2e3;
+}
+.ckeditor{
+    width: 98%;
+    margin: 0 auto;
+    text-align: left;
+}
+.button{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.editor{
+    height: auto;
+}

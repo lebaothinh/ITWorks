@@ -1,0 +1,27 @@
+<div class="applyforwork">
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()" >
+    <div class="row">
+        <mat-form-field class="col-md-6">
+            <input matInput readonly placeholder="Full name" [value]="la.laborerName" id="laborerName" /><mat-icon class="edit" routerLink="/profilelaborerandadmin" (click)="onClick()" matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="col-md-6">
+            <input matInput readonly placeholder="Email" [value]="la.email" id="email" /><mat-icon class="edit" routerLink="/profilelaborerandadmin" (click)="onClick()" matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field class="col-md-6">
+            <input matInput readonly placeholder="Phone number" [value]="la.phoneNumber" id="phoneNumber" /><mat-icon class="edit" routerLink="/profilelaborerandadmin" (click)="onClick()" matSuffix>mode_edit</mat-icon>
+          </mat-form-field><br />
+          <mat-form-field class="col-md-6">
+            <a [href]="srcCV"><input matInput readonly [value]="la.cV" placeholder="CV(*)" id="cV"/></a><mat-icon class="edit" routerLink="/profilelaborerandadmin" (click)="onClick()" matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+    </div>
+    <div class="row CVArea">
+        <mat-form-field class="col-md-12">
+            <textarea formControlName="description" matInput placeholder="Details and specific examples will make your application stronger..."></textarea>
+        </mat-form-field><br />
+    </div>
+    
+    <button mat-raised-button class="btn btn-success">APPLY</button>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+.company{
+    width: 100%;
+    margin: 0 ;
+    margin-bottom: 10px !important;
+    border: 1px solid #e1e2e3;
+    box-sizing: border-box;
+    background-color: #f1f2f3;
+    
+}
+.companyLogo{
+    padding: 10px;
+}
+.companyLogo img{
+    width: 100%;
+}
+.companyContent{  
+    padding: 10px;
+}
+.location{
+    padding: 10px;
+}
+.location #location{
+    line-height: 80%;
+}

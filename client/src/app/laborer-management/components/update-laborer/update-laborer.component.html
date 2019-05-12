@@ -1,0 +1,54 @@
+<div class="container profile">
+  <div class="header">
+    <div class="content">
+      <form [formGroup]="formData" (ngSubmit)="onUpdate() && formData.valid">
+        <div class="form-group">
+          <div class="if">
+            <div class="row">
+              <mat-form-field class="col-md-6">
+                <input matInput placeholder="Full name(*)" formControlName="laborerName" class="laborerName">
+              </mat-form-field>
+              <mat-form-field class="col-md-6">
+                <input matInput placeholder="Date of birth(*)" type="date" [value]="formData.value.dateOfBirth | date:'yyyy-MM-dd'" formControlName="dateOfBirth" class="dateOfBirth">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-radio-group class="col-md-6" formControlName="sex">
+                <mat-radio-button [value]="sttrue">Male</mat-radio-button>&nbsp;
+                <mat-radio-button [value]="stfalse">Female</mat-radio-button>
+              </mat-radio-group>
+              <mat-form-field class="col-md-6">
+                <input matInput placeholder="Email(*)" type="email" formControlName="email" class="email">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="col-md-6">
+                <input matInput placeholder="Phone Number(*)" formControlName="phoneNumber" class="phoneNumber">
+              </mat-form-field>
+              <mat-form-field class="col-md-6">
+                <input matInput placeholder="Description(*)" formControlName="description" class="description">
+              </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field class="col-md-6">
+                  <input matInput readonly placeholder="Avatar(*)" formControlName="avatar" id="avatar">
+                  <input type="file" #file1 multiple style="display:none" (change)="handleFileAvatar($event.target.files)">
+                  <button type="button" matSuffix><i color="primary" class="add-files-btn" (click)="addAvatar()" class="fas fa-upload"></i></button>
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput readonly placeholder="CV(*)" formControlName="cV" id="cV">
+                  <input type="file" #file2 multiple style="display:none" (change)="handleFileCV($event.target.files)">
+                  <button type="button" matSuffix><i color="primary" class="add-files-btn" (click)="addCV()" class="fas fa-upload"></i></button>
+                </mat-form-field>
+              </div>
+          </div>
+          <div>
+            <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="!formData.valid">
+              SAVE
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

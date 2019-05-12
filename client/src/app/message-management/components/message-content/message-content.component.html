@@ -1,0 +1,8 @@
+<div class="messagecontent" [ngClass]="{'onleft': isMine, 'onright': !isMine}">
+  <ng-container *ngFor="let image of arrImages">
+    <img style="border-radius: 5px" [src]="image" />
+  </ng-container>
+  <p style="display:inline">{{text}}</p>
+  <p class="status" *ngIf="status!='Delivered'"><span><i class="fas fa-check"></i></span> {{status}}</p>
+  <p class="status" *ngIf="status!='Seen'"><span><i class="fas fa-check"></i></span> {{status}}</p>
+</div>

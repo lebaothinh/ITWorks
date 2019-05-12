@@ -1,0 +1,89 @@
+<div class="container cvform">
+  <div id="seecv">
+    <button mat-raised-button color="warn" (click)="seeMyCV()">See My CV</button>
+  </div>
+  <form [formGroup]="CVGroup" (ngSubmit)="onSubmit()">
+    <div class="form-group formCV">
+      <div class="if">
+        <div>
+          <div class="ckeditor">
+            <p>Short Description</p>
+            <editor class="ShortDescription editor" [apiKey]="apiKey" formControlName="ShortDescription" [init]="tinyConfig"
+              [(ngModel)]="CVModel.ShortDescription"></editor>
+          </div>
+          <mat-form-field>
+            <input [(ngModel)]="CVModel.GPA" min="0" max="10" type="number" matInput placeholder="GPA(*)" formControlName="GPA" class="GPA">
+          </mat-form-field><br />
+          <mat-form-field>
+            <input [(ngModel)]="CVModel.Address" matInput placeholder="Address(*)" formControlName="Address" class="Address">
+          </mat-form-field><br />
+          <mat-form-field>
+            <input [(ngModel)]="CVModel.Major" matInput placeholder="Major(*)" formControlName="Major" class="Major">
+          </mat-form-field><br />
+          <div class="ckeditor">
+            <p>Character</p>
+            <editor class="Character editor" [apiKey]="apiKey" formControlName="Character" [init]="tinyConfig"
+              [(ngModel)]="CVModel.Character"></editor>
+          </div>
+          <mat-form-field>
+            <input [(ngModel)]="CVModel.ApplyPosition" matInput placeholder="Apply Position(*)" formControlName="ApplyPosition" class="ApplyPosition">
+          </mat-form-field><br />
+          <div class="ckeditor">
+            <p>Hobbies</p>
+            <editor class="Hobbies editor" [apiKey]="apiKey" formControlName="Hobbies" [init]="tinyConfig"
+              [(ngModel)]="CVModel.Hobbies"></editor>
+          </div>
+          <div class="ckeditor">
+            <p>Objective</p>
+            <editor class="Objective editor" [apiKey]="apiKey" formControlName="Objective" [init]="tinyConfig"
+              [(ngModel)]="CVModel.Objective"></editor>
+          </div>
+          <div class="ckeditor">
+            <p>Work Experience</p>
+            <editor class="WorkExperience editor" [apiKey]="apiKey" formControlName="WorkExperience" [init]="tinyConfig"
+              [(ngModel)]="CVModel.WorkExperience"></editor>
+          </div>
+          <div class="ckeditor">
+            <p>Soft Skills</p>
+            <editor class="SoftSkills editor" [apiKey]="apiKey" formControlName="SoftSkills" [init]="tinyConfig"
+              [(ngModel)]="CVModel.SoftSkills"></editor>
+          </div>
+          <div class="ckeditor">
+            <p>Skills</p>
+            <editor class="Skills editor" [apiKey]="apiKey" formControlName="Skills" [init]="tinyConfig"
+              [(ngModel)]="CVModel.Skills"></editor>
+          </div>
+          <div class="ckeditor">
+            <p>Languages</p>
+            <editor class="Languages editor" [apiKey]="apiKey" formControlName="Languages" [init]="tinyConfig"
+              [(ngModel)]="CVModel.Languages"></editor>
+          </div>
+          <div class="ckeditor">
+            <p>Awards</p>
+            <editor class="Awards editor" [apiKey]="apiKey" formControlName="Awards" [init]="tinyConfig"
+              [(ngModel)]="CVModel.Awards"></editor>
+          </div>
+          <div class="ckeditor">
+            <p>Education</p>
+            <editor class="Education editor" [apiKey]="apiKey" formControlName="Education" [init]="tinyConfig"
+              [(ngModel)]="CVModel.Education"></editor>
+          </div>
+          <div class="ckeditor">
+            <p>Detail Information</p>
+            <editor class="DetailInformation editor" [apiKey]="apiKey" formControlName="DetailInformation" [init]="tinyConfig"
+              [(ngModel)]="CVModel.DetailInformation"></editor>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button mat-raised-button type="submit" *ngIf="!hidden" class="btn btn-danger">
+          CREATE
+        </button>
+        <button mat-raised-button type="submit" *ngIf="hidden" class="btn btn-danger">
+          UPDATE
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

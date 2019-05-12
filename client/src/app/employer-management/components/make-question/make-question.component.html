@@ -1,0 +1,14 @@
+<div class="question" (click)="hidden = !hidden">
+  <div class="row">
+    <div class="col-md-9">
+        <h5>{{Title}}</h5>
+    </div>
+    <div class="date col-md-3">
+        <p>{{MakeQuestionDate | date: 'MMMM d, y'}}</p>
+    </div>
+  </div>
+  <div *ngIf="hidden">
+      <p class="answer"><b>Question: </b><span [innerHtml]="Content"></span></p>
+      <p class="answer"><b>Answer: </b><span [innerHtml]="Answer"></span></p>
+  </div>
+</div>

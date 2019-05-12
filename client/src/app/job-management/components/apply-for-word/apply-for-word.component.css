@@ -1,0 +1,16 @@
+mat-form-field input{
+  width: 100%;
+}
+.applyforwork{
+  text-align: center;
+  width: 100%;
+}
+.CVArea{
+  height: 100px;
+}
+#deltais{
+  height: 100%;
+}
+.edit{
+  cursor: pointer;
+}

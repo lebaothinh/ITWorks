@@ -1,0 +1,25 @@
+<div class="container employer">
+    <table class="table">
+        <thead>
+            <tr>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="rowintable" *ngFor="let ApplyWork of arrAppliesWork">
+                <td>{{ApplyWork.jobName | slice: 0: 40}}<span *ngIf="ApplyWork.jobName.length>40">...</span></td>
+                <td><img [src]="URL_IMG + ApplyWork.logo" /></td>
+                <td>
+                    <div class="col-md-1" class="status" *ngIf="ApplyWork.approval==false">
+                        <mat-icon title="Haven't Been Approved" style="color: #43454771" class="example-icon">verified_user</mat-icon>
+                    </div>
+                    <div class="col-md-1" class="status" *ngIf="ApplyWork.approval==true">
+                        <mat-icon title="Approved" style="color: rgb(11, 167, 11)" class="example-icon">verified_user</mat-icon>
+                    </div>
+                </td>
+                <td><button mat-icon-button id="btndelete" (click)="onDelete(ApplyWork.IDJob)">
+                        <mat-icon title="Delete" color="warn" class="example-icon">delete</mat-icon>
+                    </button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

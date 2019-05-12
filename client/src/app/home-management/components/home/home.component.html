@@ -1,0 +1,53 @@
+<div class="container mainbackground">
+    <!-- <img class="imgbackground" src="../../assets/background copy.jpg"> -->
+    <div class="backgroundcolor"></div>
+    <div class="background">
+        <div class="home">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>
+                            <strong>Do you want to find a job?
+                                <br> Try it now.</strong>
+                        </h1>
+                        <p>1465 jobs are waiting for you</p>
+                        <input class="form-control-lg" [(ngModel)]="keywords" name="inputkeywords" placeholder="Keyword skill (Java, iOS...), Job Title, Company...">
+                        <button mat-raised-button id="search" class="btn btn-lg btn-circle btn-brand search" (click)="searchKeyWord()">Search</button>
+                        <button mat-raised-button class="btn btn-lg btn-circle btn-outline-new-white alljobs" (click)="getAllShortcutJobs()">All Jobs</button>
+                    </div>
+                    <div class="populartag">
+                        <mat-chip-list>
+                            <mat-chip *ngFor="let skill of arrSkills" [routerLink]="['/search',skill.skillName]">#{{skill.skillName}}</mat-chip>
+                        </mat-chip-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="bigtopemployer">
+    <div class="container searchjobs row" *ngIf="arrJobs.length != 0; else cannotfindwork">
+        <div class="jobs col-md-8">
+            <ng-container *ngFor="let job of arrJobs">
+                <app-jobshortcut [routerLink]="['/job',job.IDJob]" [IDJob]="job.IDJob" [IDCompany]="job.IDCompany" [jobName]="job.jobName"
+                    [salary]="job.salary" [jobContent]="job.jobContent" [arrJobSkills]="job.arrSkills" [location]="job.locationName"
+                    [postDate]="job.postDate" [logo]="job.logo"></app-jobshortcut>
+            </ng-container>
+        </div>
+        <div class="asideright col-md-4">
+
+        </div>
+    </div>
+    <ng-template #cannotfindwork>
+        <div class="topemployers">
+            <h3>Top Employers</h3>
+        </div>
+        <div class="topemployers row container">
+            <ng-container *ngFor="let employer of arrEmployers">
+                <div class="employer col-md-4">
+                    <app-employershortcut [routerLink]="['/company',employer.IDCompany]" class="insideemployer" [companyName]="employer.companyName" [logo]="employer.logo" jobs='3' headquarters='Hồ Chí Minh'></app-employershortcut>
+                </div>
+            </ng-container>
+        </div>
+    </ng-template>
+</div>

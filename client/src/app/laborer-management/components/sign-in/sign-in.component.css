@@ -1,0 +1,28 @@
+.formLogin{
+    text-align: center;
+    padding: 5%;
+}
+.formLogin button{
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.formLogin mat-form-field{
+    width: 80%;
+}
+.formRegister{
+    text-align: center;
+}
+.formRegister p {
+    text-align: left;
+}
+.if{
+    border: 1px solid #f1f1f1;
+    padding: 10px;
+    margin: 10px;
+}
+mat-radio-group{
+    display: flex;   
+}
+mat-radio-group mat-radio-button{
+    margin:  auto;
+}

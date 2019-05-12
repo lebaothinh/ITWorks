@@ -1,0 +1,59 @@
+<div class="job container">
+  <div class="images row">
+      <img class="col-md-12" [src]="pathingA+'/'+company.avatar">
+  </div>
+  <div class="info row">
+    <div class="infocompany col-md-4">
+      <div class="infoc">
+        <div class="logo">
+          <img [src]="pathimg+'/'+company.logo">
+        </div>
+        <h3 id="companyName">{{company.companyName}}</h3>
+        <p id="generalDescription">{{company.generalDescription}}</p>
+        <p>
+          <i class="fas fa-cog"></i> {{company.services}}</p>
+        <p>
+          <i class="fas fa-user"></i> {{company.numberOE}}</p>
+        <p>
+          <i class="fas fa-globe-asia"></i> {{company.country}}</p>
+        <p>
+          <i class="far fa-calendar-alt"> </i> {{company.startTime}} - {{company.endTime}}</p>
+        <p><i class="far fa-clock"></i> No OT</p>
+        <a>3 Jobs</a>
+        <br/>
+        <p id="viewourcompany" [routerLink]="['/company',company.IDCompany]">View our company page</p>
+      </div>
+    </div>
+    <div class="infojob col-md-8">
+      <div class="infoj">
+        <h3>{{job.jobName}}</h3>
+        <p class="arrSkills">
+          <span class="skill" *ngFor="let skill of arrSkills">{{skill.skillName}}</span>
+        </p>
+        <p>
+          <i class="fas fa-hand-holding-usd"></i> {{job.salary}}</p>
+        <p class="arrSkills">
+          <i class="fas fa-map-marker-alt"></i>&nbsp;
+          <span>{{job.location}}</span>
+        </p>
+        <p><i class="far fa-calendar-alt"></i> {{job.postDate | date}}</p>
+        <button mat-raised-button color="warn" class="btnApply" (click)="openDialogApplyForJob()">Apply Now</button>
+        <div class="space"></div>
+        <div class="content">
+          <h2>Top 3 Reasons To Join Us</h2>
+          <p [innerHtml]="job.top3Reasons"></p>
+          <h2>The Job</h2>
+          <p [innerHtml]="job.jobContent"></p>
+          <h2>Your Skills and Experience</h2>
+          <p [innerHtml]="job.skillsAndExperience"></p>
+          <h2>Why You'll Love Working Here</h2>
+          <p [innerHtml]="job.reasonWorking"></p>
+          <button mat-raised-button class="btnApply" color="warn" (click)="openDialogApplyForJob()">Apply Now</button>
+        </div>
+        <div class="morejobs">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

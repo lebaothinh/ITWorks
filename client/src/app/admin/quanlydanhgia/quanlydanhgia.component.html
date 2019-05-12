@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>IDCompany</th>
+      <th>IDLaborer</th>
+      <th>Review Title</th>
+      <th>Like</th>
+      <th>Dislike</th>
+      <th>Star</th>
+      <th>Recommendation</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let review of arrReviews">
+      <td>{{review.IDCompany}}</td>
+      <td>{{review.IDLaborer}}</td>
+      <td [title]="review.title">{{review.title | slice : 0: 10}}<span *ngIf="review.title.length<10">...</span></td>
+      <td [title]="review.like">{{review.like | slice : 0: 10}}<span *ngIf="review.title.length<10">...</span></td>
+      <td [title]="review.dislike">{{review.dislike | slice : 0: 10}}<span *ngIf="review.title.length<10">...</span></td>
+      <td>{{review.star}}</td>
+      <td>{{review.recommendation}}</td>
+      <button mat-raised-button class="btn btn-danger" (click)="onDeleteReview(review.IDCompany, review.IDLaborer)">Delete</button>
+    </tr>
+  </tbody>
+</table>
